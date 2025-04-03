@@ -9,7 +9,7 @@ OnyDetect is a lightweight, cross-platform library designed to detect virtual ma
 - ✅ **Hostname Check** - Compares the system hostname against a predefined list of common VM names.
 - ✅ **GPU Check** - Compares the system GPU against a predefined list of common VM GPU names.
 - ✅ **Disk Check** - Checks the system's disk name and analyses it for names that indicate a VM.
-- ✅ **Sleep Check** - detects potential time anomalies by measuring the elapsed time for a sleep operation.
+- ✅ **Sleep Check** - Detects potential time anomalies by measuring the elapsed time for a sleep operation.
 - ✅ **BIOS Information Check** - Analyzes BIOS details for known VM signatures.
 - ✅ **MAC Address Check** - Detects virtual network interfaces.
 - ✅ **Hypervisor Detection** - Identifies if a hypervisor is present.
