@@ -1,6 +1,6 @@
 # OnyDetect - Virtual Machine & Sandbox Detection
 
-![Go](https://img.shields.io/badge/Go-1.24.0-blue) ![Cross-Platform](https://img.shields.io/badge/Cross--Platform-Windows%20%7C%20Linux%20%7C%20macOS-green)
+![Go](https://img.shields.io/badge/Go-1.24.0-blue) ![Cross-Platform](https://img.shields.io/badge/Cross--Platform-Windows%20%7C%20Linux%20%7C%20MacOS-green)
 
 OnyDetect is a lightweight, cross-platform library designed to detect virtual machines (VMs) and sandboxes by leveraging multiple detection techniques. It helps identify whether the program is running in a monitored environment, which can be useful for security, malware analysis, and anti-analysis mechanisms.
 
