@@ -1,4 +1,4 @@
-package pkg
+package detectVM
 
 import "github.com/Onyz107/OnyDetect/internal/checks"
 
