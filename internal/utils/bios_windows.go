@@ -2,7 +2,10 @@
 
 package utils
 
-import "os/exec"
+import (
+	"os/exec"
+	"syscall"
+)
 
 // GetBIOSInfo retrieves information about windows's BIOS using a PowerShell command.
 // It executes the "Get-WmiObject Win32_BIOS" command to fetch details such as the
@@ -13,6 +16,7 @@ import "os/exec"
 //   - an empty string is returned if an error occurs during command execution.
 func GetBIOSInfo() string {
 	cmd := exec.Command("powershell", "-Command", "Get-WmiObject Win32_BIOS | Select-Object Manufacturer, SMBIOSBIOSVersion | Format-List")
+	cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
 	output, err := cmd.Output()
 	if err != nil {
 		return ""

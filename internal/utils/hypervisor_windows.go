@@ -5,6 +5,7 @@ package utils
 import (
 	"os/exec"
 	"strings"
+	"syscall"
 )
 
 // GetHypervisorInfo checks if virtualization is enabled in windows's firmware.
@@ -17,6 +18,7 @@ import (
 //   - bool: true if virtualization is enabled, false otherwise.
 func GetHypervisorInfo() bool {
 	cmd := exec.Command("powershell", "-Command", "Get-WmiObject Win32_Processor | Select-Object VirtualizationFirmwareEnabled")
+	cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
 	output, err := cmd.Output()
 	if err != nil {
 		return false

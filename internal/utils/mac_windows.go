@@ -7,6 +7,7 @@ import (
 	"bytes"
 	"os/exec"
 	"strings"
+	"syscall"
 )
 
 // GetMACAddresses retrieves a list of MAC addresses from the system.
@@ -23,6 +24,7 @@ func GetMACAddresses() []string {
 	var macAddresses []string
 
 	cmd := exec.Command("getmac", "/v", "/fo", "csv", "/nh")
+	cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
 	output, err := cmd.Output()
 	if err == nil {
 		scanner := bufio.NewScanner(bytes.NewReader(output))

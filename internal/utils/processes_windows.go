@@ -5,6 +5,7 @@ package utils
 import (
 	"os/exec"
 	"strings"
+	"syscall"
 )
 
 // GetRunningProcesses retrieves a list of names of currently running processes on a Windows system.
@@ -22,6 +23,7 @@ import (
 //	so it will not work on other operating systems.
 func GetRunningProcesses() []string {
 	cmd := exec.Command("tasklist", "/fo", "csv", "/nh")
+	cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
 	output, err := cmd.Output()
 	if err != nil {
 		return nil
