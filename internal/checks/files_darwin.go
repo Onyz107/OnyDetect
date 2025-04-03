@@ -6,7 +6,7 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/onyz107/OnyDetect/internal/utils"
+	"github.com/Onyz107/OnyDetect/internal/utils"
 )
 
 // CheckSystemFiles checks for the presence of system files or indicators

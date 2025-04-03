@@ -3,7 +3,7 @@ package checks
 import (
 	"strings"
 
-	"github.com/onyz107/OnyDetect/internal/utils"
+	"github.com/Onyz107/OnyDetect/internal/utils"
 )
 
 // CheckProcesses checks the currently running processes on the system

@@ -1,6 +1,6 @@
 package pkg
 
-import "github.com/onyz107/OnyDetect/internal/checks"
+import "github.com/Onyz107/OnyDetect/internal/checks"
 
 var checksToRun = []func() bool{
 	checks.CheckHostanme,

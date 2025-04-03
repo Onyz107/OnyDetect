@@ -1,6 +1,6 @@
 package checks
 
-import "github.com/onyz107/OnyDetect/internal/utils"
+import "github.com/Onyz107/OnyDetect/internal/utils"
 
 // CheckHypervisorPresent checks if a hypervisor is present on the system.
 // It utilizes the GetHypervisorInfo function from the utils package to determine

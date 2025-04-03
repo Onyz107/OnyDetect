@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/onyz107/OnyDetect/pkg"
+	"github.com/Onyz107/OnyDetect/pkg"
 )
 
 func main() {

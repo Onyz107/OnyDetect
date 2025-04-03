@@ -3,7 +3,7 @@ package checks
 import (
 	"time"
 
-	"github.com/onyz107/OnyDetect/internal/utils"
+	"github.com/Onyz107/OnyDetect/internal/utils"
 )
 
 // CheckCPUSpeed measures the average execution time of a loop over a fixed number

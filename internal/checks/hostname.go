@@ -4,7 +4,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/onyz107/OnyDetect/internal/utils"
+	"github.com/Onyz107/OnyDetect/internal/utils"
 )
 
 // CheckHostname checks the system's hostname to determine if it contains

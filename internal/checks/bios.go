@@ -3,7 +3,7 @@ package checks
 import (
 	"strings"
 
-	"github.com/onyz107/OnyDetect/internal/utils"
+	"github.com/Onyz107/OnyDetect/internal/utils"
 )
 
 // CheckBIOS checks the system's BIOS information to determine if it contains

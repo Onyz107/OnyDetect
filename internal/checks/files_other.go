@@ -3,7 +3,7 @@
 package checks
 
 import (
-	"github.com/onyz107/OnyDetect/internal/utils"
+	"github.com/Onyz107/OnyDetect/internal/utils"
 )
 
 // CheckSystemFiles verifies the presence and validity of specific system files
