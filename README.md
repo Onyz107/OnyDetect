@@ -23,9 +23,9 @@ To install OnyDetect, use `go get`:
 go get github.com/Onyz107/OnyDetect
 ```
 
-## Usage Example
+## Usage Examples
 
-Here’s a basic example of how to use OnyDetect in your Go project:
+### Basic Example
 
 ```go
 package main
@@ -50,6 +50,37 @@ func main() {
 }
 ```
 
+### Threshold-Based Detection Example
+
+```go
+package main
+
+import (
+	"fmt"
+	"os"
+
+	"github.com/Onyz107/OnyDetect/detectVM"
+)
+
+func main() {
+	var detects int
+        var maxDetects = 2
+
+	for _, r := range detectVM.Run() {
+		if r {
+			detects++
+			if detects >= maxDetects {
+				fmt.Println("VM detected.")
+				// Immediately exit on 2 or more detections
+				os.Exit(-1)
+			}
+		}
+	}
+
+	fmt.Println("No VM detected.")
+}
+```
+
 ## Use Cases
 
 - **Malware Evasion** - Prevent execution in controlled environments.
@@ -67,3 +98,4 @@ Contributions are welcome! Feel free to open issues and submit pull requests.
 ---
 
 🔗 **Follow for updates:** [GitHub Profile](https://github.com/Onyz107)
+
