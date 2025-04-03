@@ -13,9 +13,9 @@ func main() {
 		fmt.Printf("Finished execution in %.2f seconds.\n", time.Since(s).Seconds())
 	}()
 
-	for _, v := range detectVM.Run() {
+	for i, v := range detectVM.Run() {
 		if v {
-			fmt.Println("VM or sandbox detected!")
+			fmt.Printf("VM or sandbox detected! Index: %d\n", i)
 			return
 		}
 	}

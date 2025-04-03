@@ -1,8 +1,12 @@
 package detectVM
 
-import "github.com/Onyz107/OnyDetect/internal/checks"
+import (
+	"sync"
 
-var checksToRun = [7]func() bool{
+	"github.com/Onyz107/OnyDetect/internal/checks"
+)
+
+var checksToRun = [10]func() bool{
 	checks.CheckHostanme,
 	checks.CheckBIOS,
 	checks.CheckMACAddress,
@@ -10,6 +14,9 @@ var checksToRun = [7]func() bool{
 	checks.CheckProcesses,
 	checks.CheckSystemFiles,
 	checks.CheckCPUSpeed,
+	checks.CheckDisk,
+	checks.CheckGPU,
+	checks.CheckTimeAnomaly,
 }
 
 // Run executes a series of predefined system checks and returns their results.
@@ -18,14 +25,27 @@ var checksToRun = [7]func() bool{
 // where each element corresponds to the result of a specific check.
 //
 // Returns:
-//   []bool: A slice containing the results of the executed checks. Each element
-//           is `true` if the corresponding check passed, and `false` otherwise.
+//
+//	[]bool: A slice containing the results of the executed checks. Each element
+//	        is `true` if the corresponding check passed, and `false` otherwise.
 func Run() []bool {
-	results := make([]bool, 7)
+	var wg sync.WaitGroup
+	var mu sync.Mutex
+	results := make([]bool, len(checksToRun))
 
-	for _, check := range checksToRun {
-		results = append(results, check())
+	for i, check := range checksToRun {
+		wg.Add(1)
+		go func(idx int, fn func() bool) {
+			defer wg.Done()
+
+			result := fn()
+
+			mu.Lock()
+			results[idx] = result
+			mu.Unlock()
+		}(i, check)
 	}
 
+	wg.Wait()
 	return results
 }
