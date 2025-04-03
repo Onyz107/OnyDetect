@@ -32,6 +32,7 @@ var SandboxProcesses = map[string]bool{
 	"regedit":       true,
 	"vmtoolsd":      true,
 	"prl_tools":     true,
+	"qemu-ga":       true,
 }
 
 var VmMACPrefixes = []string{
