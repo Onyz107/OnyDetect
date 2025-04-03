@@ -44,7 +44,6 @@ var VmFilesByOS = map[string][]string{
 
 		// Microsoft Sandbox
 		"C:\\ProgramData\\Microsoft\\Windows\\Containers\\Sandbox",
-		"C:\\Windows\\System32\\VmComputeAgent.exe",
 	},
 
 	"linux": {
