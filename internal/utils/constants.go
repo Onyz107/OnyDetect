@@ -15,6 +15,15 @@ var VmIndicatorsLower = []string{
 	"openvz",    // OpenVZ Containers
 	"lxc",       // Linux Containers (LXC)
 	"wsl",       // Windows subsystem for linux (WSL)
+	"malware",
+	"maltest",
+	"currentuser",
+	"sandbox",
+	"virus",
+	"john doe",
+	"test user",
+	"sand box",
+	"wdagutilityaccount",
 }
 
 var VmFilesByOS = map[string][]string{
@@ -32,6 +41,10 @@ var VmFilesByOS = map[string][]string{
 
 		// QEMU/KVM
 		"C:\\Program Files\\qemu-ga\\qemu-ga.exe",
+
+		// Microsoft Sandbox
+		"C:\\ProgramData\\Microsoft\\Windows\\Containers\\Sandbox",
+		"C:\\Windows\\System32\\VmComputeAgent.exe",
 	},
 
 	"linux": {
@@ -86,36 +99,39 @@ var VmFilesByOS = map[string][]string{
 }
 
 var SandboxProcesses = map[string]bool{
-	"sandbox.exe":       true, // Generic Sandbox
-	"firejail":          true, // Linux sandboxing tool
-	"cuckoo":            true, // Cuckoo Sandbox
-	"vmwaretray":        true, // VMware Tray
-	"vboxservice":       true, // VirtualBox Service
-	"vboxtray":          true, // VirtualBox Tray
-	"processhacker":     true, // Process Hacker (used for debugging/reversing)
-	"wine":              true, // Wine (Windows emulator for Linux)
-	"regedit":           true, // Windows Registry Editor (could indicate debugging)
-	"vmtoolsd":          true, // VMware Tools
-	"prl_tools":         true, // Parallels Tools
-	"qemu-ga":           true, // QEMU Guest Agent
-	"vmsrvc.exe":        true, // VMware Service
-	"vmusrvc.exe":       true, // VMware User Service
-	"df5serv.exe":       true, // Deep Freeze Service (sandbox-related)
-	"vgauthservice.exe": true, // VMware Authorization Service
-	"vmacthlp.exe":      true, // VMware Tools Activity Helper
-	"xenservice.exe":    true, // Xen Guest Service
-	"vboxguest.exe":     true, // VirtualBox Guest Additions
-	"vboxrun.exe":       true, // VirtualBox Run Process
-	"wireshark":         true, // Wireshark (often used in analysis environments)
-	"ida.exe":           true, // IDA Pro (debugging tool)
-	"x64dbg.exe":        true, // x64dbg Debugger
-	"ollydbg.exe":       true, // OllyDbg Debugger
-	"windbg.exe":        true, // Windows Debugger
-	"tcpview.exe":       true, // Sysinternals TCP View (network analysis tool)
-	"autoruns.exe":      true, // Sysinternals Autoruns (process analysis tool)
-	"procmon.exe":       true, // Sysinternals Process Monitor
-	"procexp.exe":       true, // Sysinternals Process Explorer
-	"fakenet":           true, // FakeNet (used to simulate network traffic)
+	"sandbox.exe":        true, // Generic Sandbox
+	"firejail":           true, // Linux sandboxing tool
+	"cuckoo":             true, // Cuckoo Sandbox
+	"vmwaretray":         true, // VMware Tray
+	"vboxservice":        true, // VirtualBox Service
+	"vboxtray":           true, // VirtualBox Tray
+	"processhacker":      true, // Process Hacker (used for debugging/reversing)
+	"wine":               true, // Wine (Windows emulator for Linux)
+	"regedit":            true, // Windows Registry Editor (could indicate debugging)
+	"vmtoolsd":           true, // VMware Tools
+	"prl_tools":          true, // Parallels Tools
+	"qemu-ga":            true, // QEMU Guest Agent
+	"vmsrvc.exe":         true, // VMware Service
+	"vmusrvc.exe":        true, // VMware User Service
+	"df5serv.exe":        true, // Deep Freeze Service (sandbox-related)
+	"vgauthservice.exe":  true, // VMware Authorization Service
+	"vmacthlp.exe":       true, // VMware Tools Activity Helper
+	"xenservice.exe":     true, // Xen Guest Service
+	"vboxguest.exe":      true, // VirtualBox Guest Additions
+	"vboxrun.exe":        true, // VirtualBox Run Process
+	"wireshark":          true, // Wireshark (often used in analysis environments)
+	"ida.exe":            true, // IDA Pro (debugging tool)
+	"x64dbg.exe":         true, // x64dbg Debugger
+	"ollydbg.exe":        true, // OllyDbg Debugger
+	"windbg.exe":         true, // Windows Debugger
+	"tcpview.exe":        true, // Sysinternals TCP View (network analysis tool)
+	"autoruns.exe":       true, // Sysinternals Autoruns (process analysis tool)
+	"procmon.exe":        true, // Sysinternals Process Monitor
+	"procexp.exe":        true, // Sysinternals Process Explorer
+	"fakenet":            true, // FakeNet (used to simulate network traffic)
+	"windowssandbox.exe": true,
+	"appvshnotify.exe":   true,
+	"sandboxed.dll":      true,
 }
 
 var VmMACPrefixes = []string{
