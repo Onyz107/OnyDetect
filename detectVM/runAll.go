@@ -2,7 +2,7 @@ package detectVM
 
 import "github.com/Onyz107/OnyDetect/internal/checks"
 
-var checksToRun = []func() bool{
+var checksToRun = [7]func() bool{
 	checks.CheckHostanme,
 	checks.CheckBIOS,
 	checks.CheckMACAddress,
