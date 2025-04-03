@@ -14,6 +14,7 @@ var VmIndicatorsLower = []string{
 	"qnx",       // QNX Real-Time OS (often virtualized)
 	"openvz",    // OpenVZ Containers
 	"lxc",       // Linux Containers (LXC)
+	"wsl",       // Windows subsystem for linux (WSL)
 }
 
 var VmFilesByOS = map[string][]string{
