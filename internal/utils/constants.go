@@ -128,9 +128,9 @@ var SandboxProcesses = map[string]bool{
 	"procmon.exe":        true, // Sysinternals Process Monitor
 	"procexp.exe":        true, // Sysinternals Process Explorer
 	"fakenet":            true, // FakeNet (used to simulate network traffic)
-	"windowssandbox.exe": true,
-	"appvshnotify.exe":   true,
-	"sandboxed.dll":      true,
+	"windowssandbox.exe": true, // Windows Sandbox
+	"appvshnotify.exe":   true, // Windows Sandbox
+	"sandboxed.dll":      true, // Windows Sandbox
 }
 
 var VmMACPrefixes = []string{
