@@ -24,6 +24,7 @@ var VmIndicatorsLower = []string{
 	"test user",
 	"sand box",
 	"wdagutilityaccount",
+	"cavuser1",
 }
 
 var VmFilesByOS = map[string][]string{
